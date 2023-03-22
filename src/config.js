@@ -1,4 +1,4 @@
-export const API_KEY = 'AIzaSyAHXsCUPc8jI7B_a_YdZmNVNukEHbIdboo';
+export const API_KEY = 'AIzaSyAjXZFyTyYR8GxHUE5HuJO_XBhcoGkG0LQ';
 
 export const BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 
