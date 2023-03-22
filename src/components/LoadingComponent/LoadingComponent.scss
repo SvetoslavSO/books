@@ -1,0 +1,16 @@
+.loading{
+  &-icon{
+    width: 50px;
+    animation: circle 1s infinite;
+    color: #31AE54;
+  }
+}
+
+@keyframes circle {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}

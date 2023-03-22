@@ -1,0 +1,24 @@
+.search-bar{
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+  display: flex;
+  overflow: hidden;
+  :focus{
+    outline: none;
+  }
+  &__input{
+    flex: 1;
+    border: none;
+    padding-left: 10px;
+    color: #00994c;
+  }
+  &__label{
+    background-color: #fff;
+  }
+  &__button{
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,23 @@
+.form{
+  &__main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__selectors{
+    margin-top: 10px;
+    display: flex;
+  }
+  &__select{
+    display: flex;
+    margin-right: 5px;
+    align-items: center;
+    &-title{
+      margin-right: 5px;
+      font-weight: bold;
+      @media (max-width: 468px) {
+        font-size: 12px;
+      }
+    }
+  }
+}

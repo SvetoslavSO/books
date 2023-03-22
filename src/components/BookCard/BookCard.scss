@@ -1,0 +1,41 @@
+.book{
+  &__card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #F6F6F9;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    text-decoration: none;
+  }
+  &__name{
+    &-title{
+      font-weight: bold;
+    }
+  }
+  &__category{
+    &-title{
+      font-weight: bold;
+    }
+  }
+  &__authors{
+    display: flex;
+    flex-direction: column;
+    &-title{
+      margin-right: 4px;
+      font-weight: bold;
+    }
+    &-list{
+      list-style: none;
+      padding: 0;
+    }
+  }
+}
+
+.book__image{
+  align-self: center;
+  width: 150px;
+  height: 200px;
+  margin-bottom: 10px;
+}
