@@ -62,7 +62,7 @@ export const MainPage = () => {
           }) : requested !== false && !isLoading ? <div className='no-books'>There is no books for your request</div> : ''}
         </ul>
         {isLoading ? <LoadingComponent></LoadingComponent> : ''}
-        {books.length && isChunksEnded === false  ? <button className='button__load-more' type='submit' onClick={() => loadMore()}>load more</button> : ''}
+        {books.length && isChunksEnded === false && isLoading === false ? <button className='button__load-more' type='submit' onClick={() => loadMore()}>load more</button> : ''}
       </div>
     </>
   )

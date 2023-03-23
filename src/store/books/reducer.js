@@ -5,7 +5,6 @@ import {
   setLoading,
   setRequested,
   setCurrentParameters,
-  setChunk,
   setEndOfChunks,
   setNumberOfBooks,
   clearBooks
@@ -27,18 +26,18 @@ const booksStore = {
 
 export const booksReducer = createReducer(booksStore, {
   [setBooks.type] : (store, action) => {
-    for(let i=0; i<action.payload.length; i++) {
+    action.payload.forEach((item) => {
       store.books.push({
-        id: action.payload[i].id,
-        title: action.payload[i].volumeInfo.title,
-        categories: action.payload[i].volumeInfo.categories,
-        image: action.payload[i].volumeInfo.imageLinks ? 
-          action.payload[i].volumeInfo.imageLinks.thumbnail ? 
-          action.payload[i].volumeInfo.imageLinks.thumbnail : '' 
+        id: item.id,
+        title: item.volumeInfo.title,
+        categories: item.volumeInfo.categories,
+        image: item.volumeInfo.imageLinks ? 
+               item.volumeInfo.imageLinks.thumbnail ? 
+               item.volumeInfo.imageLinks.thumbnail : '' 
           : '',
-        authors: action.payload[i].volumeInfo.authors
+        authors: item.volumeInfo.authors
       })
-    }
+    })
   },
   [setCurrentChunk.type] : (store, action) => {
     store.currentChunk = action.payload;
@@ -53,20 +52,6 @@ export const booksReducer = createReducer(booksStore, {
     store.parameters.type = action.payload.type;
     store.parameters.text = action.payload.text;
     store.parameters.sort = action.payload.sort
-  },
-  [setChunk.type] : (store, action) => {
-    for(let i=0; i<action.payload.length; i++) {
-      store.books.push({
-        id: action.payload[i].id,
-        title: action.payload[i].volumeInfo.title,
-        categories: action.payload[i].volumeInfo.categories,
-        image: action.payload[i].volumeInfo.imageLinks ?
-          action.payload[i].volumeInfo.imageLinks.thumbnail ?
-          action.payload[i].volumeInfo.imageLinks.thumbnail : ''
-          : '',
-        authors: action.payload[i].volumeInfo.authors
-      })
-    }
   },
   [setEndOfChunks.type] : (store, action) => {
     store.isChunksEnded = action.payload

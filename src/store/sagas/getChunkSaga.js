@@ -1,6 +1,6 @@
 import {
   getChunk,
-  setChunk,
+  setBooks,
   setCurrentChunk,
   setEndOfChunks,
   setLoading,
@@ -15,11 +15,11 @@ export function* getChunkSagaRequest(action) {
       yield put(setCurrentChunk(0));
       yield put(setEndOfChunks(true));
       yield put(setLoading(false));
-      yield put(setChunk(success.items));
+      yield put(setBooks(success.items));
     } else {
       yield put(setCurrentChunk(action.payload.currentChunk + 1));
       yield put(setLoading(false));
-      yield put(setChunk(success.items));
+      yield put(setBooks(success.items));
     }
   } else {
     yield put(setCurrentChunk(0));
